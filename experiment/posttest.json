@@ -2,38 +2,67 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+	
+      "question": "In ___________ types of stairs, the steps radiate from the centre and they do not have either any landing or any intermediate Newel post.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Helical",
+        "b": "Geometrical",
+        "c": "Turning",
+        "d": "Straight"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
+	
     {
-      "question": "This is a Sample Question 2?",
+      "question": "The ___________ stairs are useful where the space available is limited and where the traffic is less.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Straight",
+        "b": "Turning",
+        "c": "Spiral",
+        "d": "Geometrical"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },	
+ 
+    {
+      "question": "_________ stairs have any geometrical shape and they require no newel posts.",
+      "answers": {
+        "a": " Helical",
+        "b": "Circular",
+        "c": "Dog-legged",
+        "d": "Geometrical"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+  
+	
+	{
+      "question": " The stairs which are kept in motion by a revolving drum is known as a _______ ",
+      "answers": {
+        "a": "Escalator",
+        "b": "Revolving Stairs",
+        "c": "Lift",
+        "d": "Elevator"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "A Stair turning through three right angles is known as a ________ stair.",
+      "answers": {
+        "a": "Three Quarter Turn",
+        "b": "Two Quarter Turn",
+        "c": "Four Quarter Turn",
+        "d": "Single Quarter Turn"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
     }
+	
+ 
   ]
 }
