@@ -2,38 +2,68 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "A _________ is a sloping surface and it is adopted as a substitute for stair for easy connection between the floors.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Rise",
+        "b": "Pitch",
+        "c": "Ramp",
+        "d": "String"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+
+	
+    {
+      "question": "In ________ all steps lead in one direction only.",
+      "answers": {
+        "a": "Turning steps",
+        "b": "Circular steps",
+        "c": "Straight steps",
+        "d": "Geometrical steps"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"  
+    },	
+ 
+    {
+      "question": "A Stair turning through one right angle is known as a _______ stair.",
+      "answers": {
+        "a": "Quarter-turn",
+        "b": "Half-turn",
+        "c": "Dog-legged",
+        "d": "Open navel"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+	  
+    },
+  
+	
+	{
+      "question": "A Stair turning through two right angles is known as a _________ stair.",
+      "answers": {
+        "a": "Straight",
+        "b": "Geometrical",
+        "c": "Spiral",
+        "d": "Dog-legged"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"  
+    },
+	
+	{
+      "question": "The vertical portion between each tread on the stair is called:",
+      "answers": {
+        "a": "Going",
+        "b": "Nosing",
+        "c": "Winder",
+        "d": "Riser"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"  
     }
+	
+ 
   ]
 }
