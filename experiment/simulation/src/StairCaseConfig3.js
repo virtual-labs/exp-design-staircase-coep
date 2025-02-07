@@ -1,5 +1,6 @@
-
-function Page3(length,HightEachFlight,rMin,rMax,tMin,tMax){
+var Wf;
+function Page3(length,HightEachFlight,rMin,rMax,tMin,tMax,goingCorr,steel,fe,concrete){
+	console.log(" concrete 3 "+concrete);
 	L= parseFloat(length);
 	console.log("L =  "+L);
    
@@ -24,168 +25,310 @@ function Page3(length,HightEachFlight,rMin,rMax,tMin,tMax){
 var selection3 ='<div class="row" id="rowNum8">'
 	   +'<div class="col-sm-12">'	   
 	   +'	<div class="alert alert-info">'
-   	   +' 		<strong class="labelstyleInfo"><center> Effective Span : wall </center></strong> '
+   	   +' 		<strong class="labelstyleInfo"><center>Calculation of Effective Depth of waist slab  </center></strong> '
   	   +'	</div>'  	   	 
   	   +'</div>'	   
   	   +'</div>'
-  	   
-  	   +'<div class="row" id="rowNum9">'
-	   +'<div class="col-sm-5">'
-	   +'<label class="labelstyle marginBottom">Enter Value of X (m) : </label>'
+  	 +'<div class="row" id="MFDiv">'
+	   +'<div class="col-sm-6">'
+	   +'<label class="labelstyle marginBottom">MF : </label>'
 	   +'</div>'	    
-	   +'<div class="col-sm-4">'
-	   +'<input type="number" id="xval" style= "width:100%;"  class=" form-control marginBottom" >'
+	   +'<div class="col-sm-3">'
+	   +'<input type="number" id="MFval" style= "width:100%;"  class=" form-control marginBottom" >'
 	   +'</div>'
 	   +'<div class="col-sm-3" id="buttonDiv">'
-	   +'</div>'	     
+	   +'<button type="button"   class="btn btn-primary btnDesign" style = "width:100%;" id="mfSubmit" data-toggle="modal" data-target="#myModalMF" >MF VALUE</button>'
+	   +'</div>'
+	  	     
 	   +'</div>'
 	   
-	   +'<div class="row" id="rowNum10">'
+	   +'<div class="row calRowBorder " id="rowNum11" hidden>'
 	   +'<div class="col-sm-5">'
-	   +'<label class="labelstyle marginBottom">Enter Value of Y (m) : </label>'
-	   +'</div>'	    
-	   +'<div class="col-sm-4">'
-	   +'<input type="number" id="yval" style= "width:100%;"  class=" form-control marginBottom" >'
-	   +'</div>'
-	   +'<div class="col-sm-3" id="buttonDiv">'
-	   +'</div>'	     
-	   +'</div>'
-	   
-	   +'<div class="row calRowBorder " id="rowNum11" >'
-	   +'<div class="col-sm-5">'
-	   +"<label class='labelstyle '>Calculate wall &rarr; L<sub>eff</sub> (m) : </label>"
+	   +"<label class='labelstyle '>Effective depth provided for waist slab - d (m) : </label>"
 	   +'</div>'
 	   +'<div class="col-sm-4">'
-	   +'<input type="number" id="wallEft" style= 10px;width:100%;"  class=" form-control " >'
+	   +'<input type="number" id="dval" style= 10px;width:100%;"  class=" form-control " >'
 	   +'</div>'
 	   +'<div class="col-sm-3" id="buttonDiv">'
-	   +'<button type="button"   class="btn btn-danger btnDesign" style = "width:100%;" id="subWeffect" data-toggle="modal" data-target="#myModal" >SUBMIT</button>'
+	   +'<button type="button"   class="btn btn-danger btnDesign" style = "width:100%;" id="dsubmit" data-toggle="modal" data-target="#myModald" >SUBMIT</button>'
 	   +'</div>'	    
 	   +'</div>'
-	   
-	   +'<div class="row" id="rowNum12">'
-	   +'<div class="col-sm-12">'	   
-	   +'	<div class="alert alert-info">'
-   	   +' 		<strong class="labelstyleInfo"><center>Effective Span : Beam </center></strong> '
-  	   +'	</div>'  	   	 
-  	   +'</div>'	   
-  	   +'</div>'
-	   
-	   +'<div class="row" id="rowNum13">'
-	   +'<div class="col-sm-5">'
-	   +'<label class="labelstyle marginBottom">Enter Value of W1 (m) : </label>'
-	   +'</div>'	    
-	   +'<div class="col-sm-4">'
-	   +'<input type="number" id="Wval" style= "width:100%;"  class=" form-control marginBottom" >'
-	   +'</div>'
-	   +'<div class="col-sm-3" id="buttonDiv">'
-	   +'</div>'	     
-	   +'</div>'
-	   
-	   +'<div class="row" id="rowNum14">'
-	   +'<div class="col-sm-5">'
-	   +'<label class="labelstyle marginBottom">Enter Value of W2 (m) : </label>'
-	   +'</div>'	    
-	   +'<div class="col-sm-4">'
-	   +'<input type="number" id="Wval" style= "width:100%;"  class=" form-control marginBottom" >'
-	   +'</div>'
-	   +'<div class="col-sm-3" id="buttonDiv">'
-	   +'</div>'	     
-	   +'</div>'
-	   
-	   +'<div class="row  calRowBorder" id="rowNum15" >'
-	   +'<div class="col-sm-5">'
-	   +"<label class='labelstyle'>Calculate Beam &rarr; L<sub>eff</sub> (m) : </label>"
-	   +'</div>'
-	   +'<div class="col-sm-4">'
-	   +'<input type="number" id="beamEft" style= 10px;width:100%;"  class=" form-control  "  >'
-	   +'</div>'
-	   +'<div class="col-sm-3" id="buttonDiv">'
-	   +'<button type="button"   class="btn btn-danger btnDesign" style = "width:100%;" id="subBeffect" data-toggle="modal" data-target="#myModal" >SUBMIT</button>'
-	   +'</div>'	    
-	   +'</div>'
-  	   
-  	   +'<div class="row calRowBorder " id="rowNum16" >'
-	   +'<div class="col-sm-5">'
-	   +"<label class='labelstyle '>Thickness of Waist Slab D (m) : </label>"
-	   +'</div>'
-	   +'<div class="col-sm-4">'
-	   +'<input type="number" id="tWastSlab" style= 10px;width:100%;"  class=" form-control " >'
-	   +'</div>'
-	   +'<div class="col-sm-3" id="buttonDiv">'
-	   +'<button type="button"   class="btn btn-danger btnDesign" style = "width:100%;" id="subtWastSlab" data-toggle="modal" data-target="#myModal" >SUBMIT</button>'
-	   +'</div>'	    
-	   +'</div>'
-	   
-//	   +'<div class="row" id="rowNum29" >'
-//	   +'<div class="col-sm-12">'
-//	   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="nxtLvl3"  data-toggle="modal" data-target="#myModal" disabled ><b> NEXT LEVEL </b></button>'
-//	   +'</div>'
-//	   +'</div>'
 	   
 
-	 
-	   +'<div class="row" id="rowNum17" >'
-	   +'<div class="col-sm-12">'
-	   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="nxtLvl22"  data-toggle="modal" data-target="#myModal" disabled ><b>SUBMIT</b></button>'
+	   +'<div class="row" id="rowNum13" hidden>'
+	   +'<div class="col-sm-5">'
+	   +'<label class="labelstyle marginBottom">Adopting &empty; (mm) : </label>'
+	   +'</div>'	    
+	   +'<div class="col-sm-4">'
+	   +'<input type="number" id="Wval" style= "width:100%;"  class=" form-control marginBottom" >'
 	   +'</div>'
-	   +'</div>'	   
-//	   + modelHtm1
+	  	   
+	   +'</div>'
+	   
+	   +'<div class="row" id="rowNum14" hidden>'
+	   +'<div class="col-sm-5">'
+	   +'<label class="labelstyle marginBottom">Clear cover(mm): </label>'
+	   +'</div>'	    
+	   +'<div class="col-sm-4">'
+	   +'<select  class="form-control selectConf" id="clearCoverSelect" style="height:auto;" >'
+	   +'<option value="0">--- Select Types --- </option>'
+	   +' <option  value="0.015" name="">15</option>'
+	   +'  <option  value="0.020" name="">20</option>'
+//	   +'  <option id="buildingF " value="3" name="publicBuilding">Factory Building</option>'
+	   +' </select>	 '
+	   +'</div>'
+	  	     
+	   +'</div>'
+	   
+	   +'<div class="row  calRowBorder" id="rowNum15" hidden>'
+	   +'<div class="col-sm-5">'
+	   +"<label class='labelstyle'>Overall Depth(D) </label>"
+	   +'</div>'
+	   +'<div class="col-sm-4">'
+	   +'<input type="number" id="overallDepthText" style= 10px;width:100%;"  class="form-control"  >'
+	   +'</div>'
+	   +'<div class="col-sm-3" id="buttonDiv">'
+	   +'<button type="button"   class="btn btn-danger btnDesign" style = "width:100%;" id="overallDepthSubmit" data-toggle="modal" data-target="#myModaloverAll" >SUBMIT</button>'
+	   +'</div>'	    
+	   +'</div>'
+	   +'<div class="row" id="rowNum16" hidden>'
+	   +'<div class="col-sm-12">'	   
+//	   +'	<div class="alert alert-info">'
+	   +'<button type="button"   class="btn btn-danger btnDesign" style = "width:100%;" id="NextLevel3" >NEXT LEVEL</button>'
+//	  +'	</div>'  	   	 
+  	   +'</div>'	   
+  	   +'</div>'
+	   +  ' <!-- Modal -->'
+		+ '<div class="modal fade" id="myModalMF" role="dialog">'
+		+ ' <div class="modal-dialog modal-md">'
+		+ '    <div class="modal-content">'
+		+ '     <div class="modal-header">'				
+		+ '       <h4 class="modal-title" >Message box</h4>'
+		+ '       <button type="button" class="close" data-dismiss="modal" style="color:#fff;">&times;</button>'
+		+ '     </div>'
+		+ '     <div class="modal-body1">'
+		+ '       <p id="modelMsgMF"></p>'
+		+ '     </div>'
+		+ '     <div class="modal-footer">'
+		+ '       <button type="button" class="btn btn-danger" id = "nextPage" data-dismiss="modal" >Okay</button>'
+		+ '     </div>'
+		+ '   </div>'
+		+ ' </div>'
+		+ '</div>'
+	   
+	   
+  	   +  ' <!-- Modal -->'
+		+ '<div class="modal fade" id="myModald" role="dialog">'
+		+ ' <div class="modal-dialog modal-md">'
+		+ '    <div class="modal-content">'
+		+ '     <div class="modal-header">'				
+		+ '       <h4 class="modal-title" >Message box</h4>'
+		+ '       <button type="button" class="close" data-dismiss="modal" style="color:#fff;">&times;</button>'
+		+ '     </div>'
+		+ '     <div class="modal-body">'
+		+ '       <p id="modelMsgd"></p>'
+		+ '     </div>'
+		+ '     <div class="modal-footer">'
+		+ '       <button type="button" class="btn btn-danger" id = "nextPage" data-dismiss="modal" >Okay</button>'
+		+ '     </div>'
+		+ '   </div>'
+		+ ' </div>'
+		+ '</div>'
+		  +  ' <!-- Modal -->'
+			+ '<div class="modal fade" id="myModaloverAll" role="dialog">'
+			+ ' <div class="modal-dialog modal-md">'
+			+ '    <div class="modal-content">'
+			+ '     <div class="modal-header">'				
+			+ '       <h4 class="modal-title" >Message box</h4>'
+			+ '       <button type="button" class="close" data-dismiss="modal" style="color:#fff;">&times;</button>'
+			+ '     </div>'
+			+ '     <div class="modal-body">'
+			+ '       <p id="modelMsgoverAll"></p>'
+			+ '     </div>'
+			+ '     <div class="modal-footer">'
+			+ '       <button type="button" class="btn btn-danger" id = "nextPage" data-dismiss="modal" >Okay</button>'
+			+ '     </div>'
+			+ '   </div>'
+			+ ' </div>'
+			+ '</div>'
+  	 
+		
+		
 	   $("#page3Div2").html(selection3);
-	   
-	   
-	   
-	$("#xval").change(function(){		
-		$("body").css("padding","0px 0px 0px 0px");	
-		xIO= $("#xval").val();		
-		if(xIO == ""){			
-			alert("Enter numeric value ");
-			//$("#modelMsg").html("<b class='boldTextRed'>Please Enter Value</b>");
-		}else {
-			xIO = parseFloat($("#xval").val());
-				if(xIO <= 0){			
-					alert("Entered value is incorrect.Try again.");					
-				}else{
-					$("#rowNum10").prop("hidden",false);
-					$("#yval").prop("disabled",false);	
-					$("#xval").prop("disabled",true);										
-				}
+	  
+
+$("#mfSubmit").click(function(){
+	var htm=''
+//		+'<center style="color:blue;">take MF value between 0.7 - 2.0 m</center>'
+		+'<img src="images/mfgraph.png" class="img-fluid">'
+		$("#modelMsgMF").html(htm);
+});
+$("#MFval").change(function(){
+	mf=$("#MFval").val();
+	if(0.7<=mf && mf<=2.0){
+		$("#rowNum11").prop("hidden",false);
+	}
+	else
+		{
+		toastr.info("Take MF value between 0.7 - 2.0  ");
+		
 		}
-	}); 
-	
-	 var xIO,yIO;
-	$("#yval").change(function(){		
-		$("body").css("padding","0px 0px 0px 0px");	
-		yIO = $("#yval").val();		
-		if(yIO == ""){			
-			alert("Enter numeric value ");
-			//$("#modelMsg").html("<b class='boldTextRed'>Please Enter Value</b>");
-		}else {
-			yIO = parseFloat($("#yval").val());
-				if(yIO <= 0){			
-					alert("Entered value is incorrect.Try again.");					
-				}else{
-					$("#wallEft").prop("disabled",false);	 
-					$("#subWeffect").prop("disabled",false);
-					$("#yval").prop("disabled",true);										
-				}
+});
+$("#Wval").change(function(){
+	Wf=$("#Wval").val();
+	if( Wf==12||Wf==16||Wf==20||Wf==25||Wf==32){
+		$("#rowNum14").prop("hidden",false);
+	}
+	else
+		{
+		toastr.info("Take minimum value of adopting is 12,16,20,25,32 mm ");
+		
 		}
-	});
+});
+
+var id1=0;
+var d;
+$("#dsubmit").click(function(){		
+	 $("body").css("padding","0px 0px 0px 0px");
+	 var leff=goingCorr;
+	 console.log("leff "+leff);
+	 
+	 mf=$("#MFval").val();
+	 console.log("mf "+mf);
+	 var dTemp=parseFloat(parseFloat(leff)/parseFloat(20*mf));
+	 var dVal = $("#dval").val();
+	 
+	 console.log("dTemp "+dTemp);
+//	var value = parseFloat($("#inputValue").val()); // Convert to float
+     d = dTemp.toFixed(2);
+	  
+	 console.log("dVal "+dVal);
+	 console.log("d "+d);
+	 
+	if(dVal==""){			
+		$("#modelMsgd").html("<b class='boldTextRed'>Enter numeric value ");
+	}else{
+		if (id1 <= 2) {
+			if (dVal==d) {					
+				//addToMasterJSON();
+				$("#rowNum13").prop("hidden",false);
+				$("#modelMsgd").html("<b class='boldTextBlue'>Calculate Overall Deapth (D)</b> ");		
+				$("#mfSubmit").prop("disabled",true);
+				$("#dVal,#dsubmit").prop("disabled",true);
+			
+//				riserHtAnim(rHVal);
+				id1=0;		
+				toastr.success("Correct Answer");
+				
+			} else if (dVal!=d) {
+				$("#modelMsgd").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");				
+			}
+		} else if (id1 == 3){
+			$("#modelMsgd").html('<img src="images/d.png" class="img-fluid">');
+		} else {
+			dVal =parseFloat($("#dval").val());
+//			flow = flowAns.toFixed(2);
+			if (dVal==d)  {					
+				//addToMasterJSON();
+				
+				$("#rowNum13").prop("hidden",false);
+				$("#modelMsgd").html("<b class='boldTextBlue'>Calculate Overall Deapth(D)</b> ");		
+				$("#mfSubmit").prop("disabled",true);
+				$("#dVal,#dsubmit").prop("disabled",true);
+				
+//				riserHtAnim(rHVal);
+				id1=0;		
+				toastr.success("Correct Answer");
+				
+			} else {
+				$("#modelMsgd").html("<b class='boldTextBlue'>Correct Answer "+d);
+			}
+		}
+		id1++;
+	}	 
+});
+	var selectedText;    
+$('#clearCoverSelect').on('change', function () {
+    // Get selected option text
+     selectedText = $(this).val();
+     
+    $("#rowNum15").prop("hidden",false);	
+    console.log(selectedText);
+
+});	
+id2=0;
+var overallDepthText;
+$("#overallDepthSubmit").click(function(){	
+//	$("#modelMsgoverAll").html("");
+	 $("body").css("padding","0px 0px 0px 0px");
+	 overallDepthText= $("#overallDepthText").val();
+	 convertMFMM=parseFloat(Wf/1000);
+	 var temp=parseFloat(parseFloat(d)+parseFloat(convertMFMM/2)+parseFloat(selectedText));
+	 overallDepth=temp.toFixed(2);
+	 console.log("overallDepthText "+overallDepthText);
+	 console.log("convertMFMM "+convertMFMM);
+	 console.log("d "+d);
+	 console.log("selectedText "+selectedText);
+	 
+	 console.log("overallDepth "+overallDepth);
+	if(overallDepthText==""){			
+		$("#modelMsgoverAll").html("<b class='boldTextRed'>Enter numeric value ");
+	}else{
+		if (id2 <= 2) {
+			if (overallDepthText==overallDepth) {					
+				$("#modelMsgoverAll").html("<b class='boldTextBlue'>Calculate load .</b>");
+				$("#rowNum16").prop("hidden",false);
+				 $("#overallDepthText,#overallDepthSubmit").prop("disabled",true);
+				id2=0;		
+				toastr.success("Correct Answer");
+				
+			} else if (overallDepthText!=overallDepth) {
+				$("#modelMsgoverAll").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");				
+			}
+		} else if (id2 == 3){
+			$("#modelMsgoverAll").html('<img src="images/overAll.png" class="img-fluid">');
+		} else {
+			overallDepthText =parseFloat($("#overallDepthText").val());
+//			flow = flowAns.toFixed(2);
+			if (overallDepthText==overallDepth)  {					
+				$("#modelMsgoverAll").html("<b class='boldTextBlue'>Calculate load .</b>");
+				$("#rowNum16").prop("hidden",false);
+				$("#overallDepthText,#overallDepthSubmit").prop("disabled",true);
+				id2=0;		
+				toastr.success("Correct Answer");
+				
+			} else {
+				$("#modelMsgoverAll").html("<b class='boldTextBlue'>Correct Answer "+overallDepth);
+			}
+		}
+		id2++;
+	}	 
+});
 	    
 	
-	$("#nxtLvl22").click(function (){
+	$("#NextLevel3").click(function (){
 		$("body").css("padding","0px 0px 0px 0px");	
+		 $("#page3").prop("hidden",true);
+//		 	$("#referValue").prop("disabled",false);
+		 	$("#page4").prop("hidden",false);
+//				StairCaseAnim3();
+		 	StairCaseConfigLoad(d,overallDepth,steel,fe,concrete,Wf);
+				tempMasterJson = {
+						"d(m)":d,
+						"D(m)":overallDepth,
+						"Adopting(&empty;)":Wf,
+						};
+				jsonArray.push(tempMasterJson);
+				
+				MasterJson=jsonArray;
+				console.log(MasterJson);
+			});
 		//StairCaseAnim2();
+		
 //	StairCaseConfig3(length,riserNum,TreadNum);
-	$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully</b>");
-	clearInterval(cron);
+//	$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully</b>");
+//	clearInterval(cron);
 	
-});	
-	  
-	   
-	   
-	   
-	   
-	   
-	   
 }
+	  
+	
