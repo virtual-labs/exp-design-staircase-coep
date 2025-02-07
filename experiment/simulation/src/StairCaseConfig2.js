@@ -12,7 +12,14 @@ var numRiserAns,numRiserCorr, numTreadsCorr,TreadWidth ;
 var goingCorr;
 var wLandingCorr;
 
-function Page2(length,HightEachFlight,rMin,rMax,tMin,tMax){
+function StairCaseConfig2(length,HightEachFlight,rMin,rMax,tMin,tMax,steel,fe,concrete){
+	
+	
+	
+	
+	$("#page1Div1").empty();
+	$("#page1Div2").empty();
+	console.log(" concrete 2"+concrete);
 	L= parseFloat(length);
 	console.log("L =  "+L);
    
@@ -32,37 +39,10 @@ function Page2(length,HightEachFlight,rMin,rMax,tMin,tMax){
 
 	$("#centerText1").html('MIMIC');
     $("#centerText2").html('CONFIGURATION'); 
-			
-//		var modelHtm1 =  ' <!-- Modal -->'
-//				+ '<div class="modal fade" id="myModal" role="dialog">'
-//				+ ' <div class="modal-dialog modal-md">'
-//				+ '    <div class="modal-content">'
-//				+ '     <div class="modal-header">'				
-//				+ '       <h4 class="modal-title" >Message box</h4>'
-//				+ '       <button type="button" class="close" data-dismiss="modal" style="color:#fff;">&times;</button>'
-//				+ '     </div>'
-//				+ '     <div class="modal-body">'
-//				+ '       <p id="modelMsg"></p>'
-//				+ '     </div>'
-//				+ '     <div class="modal-footer">'
-//				+ '       <button type="button" class="btn btn-danger" id = "nextPage" data-dismiss="modal" >Okay</button>'
-//				+ '     </div>'
-//				+ '   </div>'
-//				+ ' </div>'
-//				+ '</div>';
+	
 
-var selection2 ='<div class="row" id="rowNum1">'
-	   +'<div class="col-sm-6">'
-	   +' <div class="alert alert-info">'
-   	   +' <strong class="labelstyleInfo "><center>Length = '+L+' m</center></strong> '
-  	   +'</div>'
-  	   +'</div>'
-	   +'<div class="col-sm-6">'
-	   +' <div class="alert alert-info">'
-	   +' <strong class="labelstyleInfo "><center>Hight of Each Flight = '+hFlightAns+' m</center></strong> '	   
-	   +'</div>'
-	   +'</div>'
-	   +'</div>'
+var selection2 =''
+
 	   
 	   +'<div class="row calRowBorder" id="rowNum2" >'
 	   +'<div class="col-sm-5">'
@@ -114,7 +94,7 @@ var selection2 ='<div class="row" id="rowNum1">'
 	   
 	   +'<div class="row calRowBorder" id="rowNum6" hidden>'
 	   +'<div class="col-sm-5">'
-	   +'<label class="labelstyle ">Total Going (m) : </label>'
+	   +'<label class="labelstyle ">  L<sub>eff</sub> (m) : </label>'
 	   +'</div>'
 	   +'<div class="col-sm-4">'
 	   +'<input type="number" id="going" style= 10px;width:100%;"  class=" form-control " disabled>'
@@ -124,23 +104,34 @@ var selection2 ='<div class="row" id="rowNum1">'
 	   +'</div>'    
 	   +'</div>'
 	   
-	   +'<div class="row calRowBorder" id="rowNum7" hidden>'
-	   +'<div class="col-sm-5">'
-	   +"<label class='labelstyle '>Width of Each Landing : </label>"
-	   +'</div>'
-	   +'<div class="col-sm-4">'
-	   +'<input type="number" id="Landing1W" style= 10px;width:100%;"  class=" form-control " disabled>'
-	   +'</div>'
-	   +'<div class="col-sm-3" id="buttonDiv">'
-	   +'<button type="button"   class="btn btn-danger btnDesign" style = "width:100%;" id="subLanding1W" data-toggle="modal" data-target="#myModal" >SUBMIT</button>'
-	   +'</div>'	    
-	   +'</div>'
+//	   +'<div class="row calRowBorder" id="rowNum7" hidden>'
+//	   +'<div class="col-sm-5">'
+//	   +"<label class='labelstyle '>Width of Each Landing : </label>"
+//	   +'</div>'
+//	   +'<div class="col-sm-4">'
+//	   +'<input type="number" id="Landing1W" style= 10px;width:100%;"  class=" form-control " disabled>'
+//	   +'</div>'
+//	   +'<div class="col-sm-3" id="buttonDiv">'
+//	   +'<button type="button"   class="btn btn-danger btnDesign" style = "width:100%;" id="subLanding1W" data-toggle="modal" data-target="#myModal" >SUBMIT</button>'
+//	   +'</div>'	    
+//	   +'</div>'
+	   
+//	   +'<div class="row" id="rowNum17" hidden>'
+//	   +'<div class="col-sm-12">'	   
+//	   +'	<div class="alert alert-info">'
+//   	   +' 		<strong class="labelstyleInfo"><center>Click on > arrow</center></strong> '
+//  	   +'	</div>'  	   	 
+//  	   +'</div>'
+//	   +'</div>'	
 	   
 	   +'<div class="row" id="rowNum17" hidden>'
-	   +'<div class="col-sm-12">'
-	   +'<button type="button" style="padding: 10px; "  class="btn btn-danger btnStyle" id="nxtLvl2"  data-toggle="modal" data-target="#myModal" disabled ><b>SUBMIT</b></button>'
-	   +'</div>'
-	   +'</div>'	   
+	   +'<div class="col-sm-12">'	   
+//	   +'	<div class="alert alert-info">'
+	   +'<button type="button"   class="btn btn-danger btnDesign" style = "width:100%;" id="NextLevel2" >NEXT LEVEL</button>'
+//	  +'	</div>'  	   	 
+  	   +'</div>'	   
+  	   +'</div>'
+	   
 ////	   + modelHtm1
 	   $("#page2Div2").html(selection2);
 	   
@@ -169,7 +160,7 @@ var selection2 ='<div class="row" id="rowNum1">'
 					$("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");				
 				}
 			} else if (id2 == 3){
-				$("#modelMsg").html("<b class='boldTextBlue'>NOTE : As Per The Selected Building Type The Standard Range of Riser is "+rMinVal+" mm to "+rMaxVal+" mm  </b>");
+				$("#modelMsg").html("<b class='boldTextBlue'>NOTE : As Per The Selected Building Type The Standard Range of Riser is "+rMinVal+" m to "+rMaxVal+" m  </b>");
 			} else {
 				rHVal =parseFloat($("#riserH").val());
 //				flow = flowAns.toFixed(2);
@@ -186,7 +177,7 @@ var selection2 ='<div class="row" id="rowNum1">'
 					toastr.success("Correct Answer");
 					
 				} else {
-					$("#modelMsg").html("<b class='boldTextBlue'>Correct Answer is  Value between "+rMinVal+" mm to "+rMaxVal+" mm</b>");
+					$("#modelMsg").html("<b class='boldTextBlue'>Correct Answer is  Value between "+rMinVal+" m to "+rMaxVal+" m</b>");
 				}
 			}
 			id2++;
@@ -202,8 +193,11 @@ var selection2 ='<div class="row" id="rowNum1">'
 		
 		$("#subRnum").click(function(){	
 		numRiserAns = hFlightAns/rHVal;
-   		numRiserCorr=numRiserAns.toFixed(2);
+   		numRiserCorr=Math.ceil(numRiserAns);
    		 
+   	
+   		
+   		
 	 	 $("body").css("padding","0px 0px 0px 0px");
 		 riserNum =$("#Rnum").val();	
 		if(riserNum==""){			
@@ -315,7 +309,7 @@ var selection2 ='<div class="row" id="rowNum1">'
 					$("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");				
 				}
 			} else if (id2 == 3){
-				$("#modelMsg").html("<b class='boldTextBlue'>NOTE : As Per The Selected Building Type The Standard Range of Tread is "+tMinVal+" mm to "+tMaxVal+" mm  </b>");
+				$("#modelMsg").html("<b class='boldTextBlue'>NOTE : As Per The Selected Building Type The Standard Range of Tread is "+tMinVal+"m to "+tMaxVal+"m  </b>");
 			} else {
 				TreadWidth =parseFloat($("#WofT").val());
 //				flow = flowAns.toFixed(2);
@@ -331,7 +325,7 @@ var selection2 ='<div class="row" id="rowNum1">'
 					id2=0;
 					toastr.success("Correct Answer");
 				} else {
-					$("#modelMsg").html("<b class='boldTextBlue'>Correct Answer is  Value between "+tMinVal+" mm to "+tMaxVal+" mm</b>");
+					$("#modelMsg").html("<b class='boldTextBlue'>Correct Answer is  Value between "+tMinVal+"m to "+tMaxVal+"m</b>");
 				}
 			}
 			id2++;
@@ -351,13 +345,12 @@ $("#subGoing").click(function(){
 			if (id2 <= 2) {
 				if (gVal == goingCorr) {				
 					//addToMasterJSON();
-					$("#rowNum7").prop("hidden",false);	
-					$("#Landing1W").prop("disabled",false);	
-					$("#subLanding1W").prop("disabled",false);
+					$("#rowNum17").prop("hidden",false);	
+					
 					$("#going").prop("disabled",true);	
 					$("#subGoing").prop("disabled",true);
 					id2=0;		
-					toastr.success("Correct Answer");
+//					toastr.success("Correct Answer");
 				} else if (gVal != goingCorr) {
 					$("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");				
 				}
@@ -368,13 +361,12 @@ $("#subGoing").click(function(){
 //				flow = flowAns.toFixed(2);
 				if (gVal == goingCorr) {					
 					//addToMasterJSON();
-					$("#rowNum7").prop("hidden",false);	
-					$("#Landing1W").prop("disabled",false);	
-					$("#subLanding1W").prop("disabled",false);
+					$("#rowNum17").prop("hidden",false);	
+				
 					$("#going").prop("disabled",true);	
 					$("#subGoing").prop("disabled",true);		
 					id2=0;
-					toastr.success("Correct Answer");
+//					toastr.success("Correct Answer");
 				} else {
 					$("#modelMsg").html("<b class='boldTextBlue'>Correct Answer is  " +goingCorr+'</b>');
 				}
@@ -384,59 +376,29 @@ $("#subGoing").click(function(){
 	});
 
 var Landing1Width;
-$("#subLanding1W").click(function(){	
-		 var widthELanding = L-goingCorr;
-		 var widthELanding2 =widthELanding/2;
-   		 var wLandingAns=widthELanding2.toFixed(2);
-   		wLandingCorr=parseFloat(wLandingAns);
-	 	 $("body").css("padding","0px 0px 0px 0px");
-		 Landing1Width =$("#Landing1W").val();	
-		if(Landing1Width==""){			
-			$("#modelMsg").html("<b class='boldTextRed'>Enter numeric value ");
-		}else{
-			if (id2 <= 2) {
-				if (Landing1Width == wLandingCorr) {				
-					//addToMasterJSON();
-					$("#rowNum8").prop("hidden",false);	
-					$("#rowNum9").prop("hidden",false);		
-					$("#Landing1W").prop("disabled",true);	
-					$("#subLanding1W").prop("disabled",true);
-					id2=0;		
-					toastr.success("Correct Answer");
-				} else if (Landing1Width != wLandingCorr) {
-					$("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");				
-				}
-			} else if (id2 == 3){
-				$("#ModelTitle1").html("Formula");
-				LperWFormulaImg= '<img src="images/formulaLandingW.png"   class="img-responsive" alt="Cinque Terre" width="100%" height="80%" >'
-				$("#modelMsg").html(LperWFormulaImg);
-				//$("#modelMsg").html("<b class='boldTextBlue'>Formula : (Total Length of Staircase - Total Going) / 2 </b>");
-			} else {
-				$("#ModelTitle1").html("Message box");
-				Landing1Width =parseFloat($("#Landing1W").val());
-//				flow = flowAns.toFixed(2);
-				if (Landing1Width == wLandingCorr) {					
-					//addToMasterJSON();			
-//					$("#nxtLvl2").prop("disabled",false);	
-					$("#Landing1W").prop("disabled",true);	
-					$("#subLanding1W").prop("disabled",true);		
-					id2=0;
-					toastr.success("Correct Answer");
-				} else {
-					$("#modelMsg").html("<b class='boldTextBlue'>Correct Answer is  " +wLandingCorr+'</b>');
-				}
-			}
-			id2++;
-		}
-	});
+
 	
 	
 
- $("#nxtLvl2").click(function (){
+ $("#NextLevel2").click(function (){
+	 
+	 $("#page2").prop("hidden",true);
+ 	$("#referValue").prop("disabled",false);
+ 	$("#page3").prop("hidden",false);
+		StairCaseAnim3();
+		Page3(length,HightEachFlight,rMin,rMax,tMin,tMax,goingCorr,steel,fe,concrete);
+		tempMasterJson = {
+				"Height_of_riser(R)(m)":rHVal,
+				"No_of_treads":numTreadsCorr,
+				"Treads_width(T)(m)":TreadWidth,
+				
+				"Leff(m)":goingCorr,
+				};
+		jsonArray.push(tempMasterJson);
+		
+		MasterJson=jsonArray;
+		console.log(MasterJson);
+	});
 	
-	$("body").css("padding","0px 0px 0px 0px");	
-	$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully</b>");
-//	clearInterval(cron);
-	
-});	
+
 }
