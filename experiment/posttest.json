@@ -2,7 +2,6 @@
   "version": 2.0,
   "questions": [
     {
-	
       "question": "In ___________ types of stairs, the steps radiate from the centre and they do not have either any landing or any intermediate Newel post.",
       "answers": {
         "a": "Helical",
@@ -13,7 +12,6 @@
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
-	
     {
       "question": "The ___________ stairs are useful where the space available is limited and where the traffic is less.",
       "answers": {
@@ -24,8 +22,7 @@
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
-    },	
- 
+    },
     {
       "question": "_________ stairs have any geometrical shape and they require no newel posts.",
       "answers": {
@@ -37,9 +34,7 @@
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
-  
-	
-	{
+    {
       "question": "The stairs which are kept in motion by a revolving drum is known as a _______",
       "answers": {
         "a": "Escalator",
@@ -50,19 +45,16 @@
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
-	
-	{
-      "question": "A Stair turning through three right angles is known as a ________ stair.",
+    {
+      "question": "According to IS 456:2000, what is the minimum thickness of a waist slab to prevent excessive deflection?",
       "answers": {
-        "a": "Three Quarter Turn",
-        "b": "Two Quarter Turn",
-        "c": "Four Quarter Turn",
-        "d": "Single Quarter Turn"
+        "a": "L/20",
+        "b": "L/25",
+        "c": "L/30",
+        "d": "L/35"
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     }
-	
- 
   ]
 }
