@@ -1,6 +1,6 @@
-### Procedure
+## Procedure
 
-##### Simulator :
+#### Simulator :
 
 - Select Types of building 
 - Enter Length
