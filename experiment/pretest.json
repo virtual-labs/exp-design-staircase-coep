@@ -38,20 +38,6 @@
       "difficulty": "beginner"
 	  
     },
-  
-	
-	{
-      "question": "A Stair turning through two right angles is known as a _________ stair.",
-      "answers": {
-        "a": "Straight",
-        "b": "Geometrical",
-        "c": "Spiral",
-        "d": "Dog-legged"
-      },
-      "correctAnswer": "d",
-      "difficulty": "beginner"  
-    },
-	
 	{
       "question": "The vertical portion between each tread on the stair is called:",
       "answers": {
@@ -61,6 +47,17 @@
         "d": "Riser"
       },
       "correctAnswer": "d",
+      "difficulty": "beginner"  
+    },
+	{
+      "question": "The primary purpose of a landing in a staircase is:",
+      "answers": {
+        "a": "Increase load capacity",
+        "b": "Provide support and change direction",
+        "c": "Reduce tread length",
+        "d": "Avoid nosing projection"
+      },
+      "correctAnswer": "b",
       "difficulty": "beginner"  
     }
 	
