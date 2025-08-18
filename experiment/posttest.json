@@ -24,12 +24,12 @@
       "difficulty": "beginner"
     },
     {
-      "question": "_________ stairs have any geometrical shape and they require no newel posts.",
+      "question": "In structural analysis of stair flights, they are generally considered to act as:",
       "answers": {
-        "a": " Helical",
-        "b": "Circular",
-        "c": "Dog-legged",
-        "d": "Geometrical"
+        "a": "Cantilever beams",
+        "b": "Simply supported slabs",
+        "c": "Continuous beams",
+        "d": "Fixed-fixed beams"
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
@@ -54,6 +54,17 @@
         "d": "L/35"
       },
       "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The effective span of a stair flight is measured between:",
+      "answers": {
+        "a": "Centers of the landings or supports",
+        "b": "Clear distance between risers",
+        "c": "Nosing to nosing distance",
+        "d": "Any convenient points"
+      },
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
