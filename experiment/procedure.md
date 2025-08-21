@@ -1,4 +1,3 @@
-
 ## PROCEDURE 
 
 - Select the type of building

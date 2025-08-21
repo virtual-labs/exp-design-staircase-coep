@@ -29,7 +29,7 @@ Geometrical Configurations A wide variety of staircases are met with in practice
 ![2types](images/figure2.png)
 
 
-#### Design Steps:
+### Design Steps:
 
 #### Define Design Parameters:
 Specify the floor-to-floor height difference to be traversed by the staircase.
