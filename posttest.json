@@ -1,0 +1,71 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "In ___________ types of stairs, the steps radiate from the centre and they do not have either any landing or any intermediate Newel post.",
+      "answers": {
+        "a": "Helical",
+        "b": "Geometrical",
+        "c": "Turning",
+        "d": "Straight"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The ___________ stairs are useful where the space available is limited and where the traffic is less.",
+      "answers": {
+        "a": "Straight",
+        "b": "Turning",
+        "c": "Spiral",
+        "d": "Geometrical"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In structural analysis of stair flights, they are generally considered to act as:",
+      "answers": {
+        "a": "Cantilever beams",
+        "b": "Simply supported slabs",
+        "c": "Continuous beams",
+        "d": "Fixed-fixed beams"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The stairs which are kept in motion by a revolving drum is known as a _______",
+      "answers": {
+        "a": "Escalator",
+        "b": "Revolving Stairs",
+        "c": "Lift",
+        "d": "Elevator"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "According to IS 456:2000, what is the minimum thickness of a waist slab to prevent excessive deflection?",
+      "answers": {
+        "a": "L/20",
+        "b": "L/25",
+        "c": "L/30",
+        "d": "L/35"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The effective span of a stair flight is measured between:",
+      "answers": {
+        "a": "Centers of the landings or supports",
+        "b": "Clear distance between risers",
+        "c": "Nosing to nosing distance",
+        "d": "Any convenient points"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
